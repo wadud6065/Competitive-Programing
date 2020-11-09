@@ -9,37 +9,25 @@ using namespace std;
 #define ln printf("\n")
 #define F(i,L,R) for (lld i = L; i < R; i++)
 #define FE(i,L,R) for (lld i = L; i <= R; i++)
-#define ALL(c) (c).begin(),(c).end() //handy for function like "sort()"
+#define ALL(c) (c).begin(),(c).end()
+#define PI 3.1415926535897932384626
 
 int main()
 {
 	lld test;
 	getI(test);
 	FE(i, 1, test) {
-		lld a, b, cnt=0, curA = 0, curB = 0;
-		getII(a, b);
-		a = a-1;
-
-		if(b % 3 == 0)
-			curB = (b/3)*2;
-
-		else if(b % 3 != 0) {
-			curB = (b/3)*2;
-			if(b % 3 == 2)
-				curB++;
+		lld a, cnt = 0;
+		getI(a);
+		while(a != 0) {
+			if(a % 2 != 0)
+				cnt++;
+			a = a/2;
 		}
-
-		if(a % 3 == 0)
-			curA = (a/3)*2;
-
-		else if(a % 3 != 0) {
-			curA = (a/3)*2;
-			if(a % 3 == 2)
-				curA++;
-		}
-		cnt = curB - curA;
-
-		printf("Case %lld: %lld\n", i, cnt);
+		if(cnt % 2 == 0)
+			printf("Case %lld: even\n", i);
+		else
+			printf("Case %lld: odd\n", i);
 	}
 	return 0;
 }
