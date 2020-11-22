@@ -1,7 +1,7 @@
 #include<iostream>
 #include<limits>
 #include<cmath>
-#define pi 3.1415926535897932384626;
+#define pi 3.1415926535897932384626
 using namespace std;
 
 int main()
