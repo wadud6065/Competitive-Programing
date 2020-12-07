@@ -7,15 +7,30 @@ using namespace std;
 #define getIII(a,b,c) scanf("%lld %lld %lld", &a, &b, &c)
 #define pt(a) printf("%lld\n", a)
 #define ln printf("\n")
-#define F(i,L,R) for (lld i = L; i < R; i++)
-#define FE(i,L,R) for (lld i = L; i <= R; i++)
-#define FR(i,L,R) for (lld i = L; i > R; i--)
-#define FRE(i,L,R) for (lld i = L; i >= R; i--)
 #define ALL(c) (c).begin(),(c).end()
 #define PI 3.1415926535897932384626
 #define pb push_back
 
+lld func(lld a, lld b) {
+    lld cnt=0;
+    lld k = __gcd(a, b);
+    for(lld i=1; i*i<=k; i++)
+        if(k%i == 0 && i*i != k)
+            cnt = cnt + 2;
+        else if(k%i == 0 && i*i == k)
+            cnt++;
+    return cnt;
+}
+
 int main()
 {
-    
+    lld test;
+    getI(test);
+    while(test--) {
+        lld a, b;
+        getII(a, b);
+        pt(func(a, b));
+    }
+
+    return 0;
 }
